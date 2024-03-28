@@ -7,13 +7,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 installGlobals();
 
 export default defineConfig({
-  // resolve: {
-  //   alias: [
-  //     {
-  //       find: "@styles",
-  //       replacement: "/app/styles",
-  //     },
-  //   ],
-  // },
   plugins: [remix(), tsconfigPaths(), vanillaExtractPlugin()],
+  test: {
+    environment: "happy-dom",
+    globals: true,
+  },
 });
