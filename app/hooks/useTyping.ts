@@ -20,6 +20,10 @@ export function useTyping({ maxLength, minLength }: Params) {
 
   const typing = useCallback(
     ({ letter, onCorrect, onIncorrect }: TypingParams) => {
+      if (!letter.match(/^[a-z]$/)) {
+        return;
+      }
+
       const targetLetter = word[currentIndex];
       if (targetLetter !== letter) {
         onIncorrect();
@@ -44,7 +48,7 @@ export function useTyping({ maxLength, minLength }: Params) {
   };
 }
 
-const generateWord = (minLength: number, maxLength: number) => {
+export const generateWord = (minLength: number, maxLength: number) => {
   const word = generate({ minLength, maxLength }) as string;
   return word.split("");
 };

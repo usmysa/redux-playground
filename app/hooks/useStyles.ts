@@ -29,5 +29,5 @@ const getSize = (
     return toPixel(value);
   }
 
-  return sizeObj[value] ?? value;
+  return sizeObj[value] ?? toPixel(value);
 };
