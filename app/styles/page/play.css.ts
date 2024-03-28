@@ -1,3 +1,4 @@
+import { vars } from "@/styles/global/theme.css";
 import { keyframes, style } from "@vanilla-extract/css";
 
 const baseLetter = style({
@@ -47,6 +48,6 @@ export const typedInLetter = style([
 export const willTypeInLetter = style([
   baseLetter,
   {
-    color: "#dee2e6",
+    color: vars.colors.gray,
   },
 ]);
