@@ -3,14 +3,25 @@
 </p>
 
 # Simple Typing
+
 ## Technology
-- Framework: [Remix](https://github.com/remix-run/remix)
-- Build Tool: [Vite](https://github.com/vitejs/vite)
-- JavaScript Runtime: [Bun](https://github.com/oven-sh/bun)
-- Styling: [vanilla-extract](https://github.com/vanilla-extract-css/vanilla-extract)
-- State Management: [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)
+
+- Framework
+  - [Remix](https://github.com/remix-run/remix)
+- Build Tool
+  - [Vite](https://github.com/vitejs/vite)
+- JavaScript Runtime
+  - [Bun](https://github.com/oven-sh/bun)
+- Styling
+  - [vanilla-extract](https://github.com/vanilla-extract-css/vanilla-extract)
+- State Management
+  - [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)
+- Testing
+  - [Vitest](https://github.com/vitest-dev/vitest)
+  - [React Testing Library](https://github.com/testing-library/react-testing-library)
 
 ## Quick Start
+
 ### Install dependencies
 
 ```sh
