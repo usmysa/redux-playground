@@ -20,6 +20,10 @@ export function useTyping({ maxLength, minLength }: Params) {
 
   const typing = useCallback(
     ({ letter, onCorrect, onIncorrect }: TypingParams) => {
+      if (!letter.match(/^[a-z]$/)) {
+        return;
+      }
+
       const targetLetter = word[currentIndex];
       if (targetLetter !== letter) {
         onIncorrect();
