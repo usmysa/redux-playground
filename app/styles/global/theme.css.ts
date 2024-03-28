@@ -1,6 +1,9 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 
 export const vars = createGlobalTheme(":root", {
+  colors: {
+    gray: "#dee2e6",
+  },
   spacing: {
     xs: "0.625rem",
     sm: "0.75rem",
