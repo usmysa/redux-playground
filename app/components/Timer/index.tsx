@@ -12,7 +12,7 @@ type Props = {
 export function Timer({ width }: Props) {
   const { count, max } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
-  const interval = useRef<NodeJS.Timeout>();
+  const interval = useRef<ReturnType<typeof setInterval>>();
 
   useEffect(() => {
     interval.current = setInterval(() => {
