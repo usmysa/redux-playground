@@ -48,7 +48,7 @@ export function useTyping({ maxLength, minLength }: Params) {
   };
 }
 
-const generateWord = (minLength: number, maxLength: number) => {
+export const generateWord = (minLength: number, maxLength: number) => {
   const word = generate({ minLength, maxLength }) as string;
   return word.split("");
 };
