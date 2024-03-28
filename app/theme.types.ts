@@ -5,6 +5,7 @@ export type Spacing = Size;
 export type Radius = Size;
 
 export type Theme = {
+  colors: Record<string, string>;
   spacing: Record<SizeValues, string>;
   radius: Record<SizeValues, string>;
 };

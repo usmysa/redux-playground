@@ -18,7 +18,8 @@ import {
 import type { MetaFunction } from "@remix-run/node";
 import { useLocation, useNavigate } from "@remix-run/react";
 import * as styles from "@/styles/page/play.css";
-import { useEffect, useRef } from "react";
+import { IconClock } from "@tabler/icons-react";
+import { useCallback, useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -36,6 +37,7 @@ export default function Play() {
   const firstRender = useRef(true);
   const level = useSelector((state) => state.level.value);
   const count = useSelector((state) => state.timer.count);
+  const wordContainerRef = useRef<HTMLDivElement>(null);
   const { currentIndex, typing, word } = useTyping(getWordLength(level));
   useKeyDown((event) => {
     typing({
@@ -45,9 +47,20 @@ export default function Play() {
       },
       onIncorrect: () => {
         dispatch(incrementError());
+        playShakeAnimation();
       },
     });
   });
+
+  const playShakeAnimation = useCallback(() => {
+    const classList = wordContainerRef.current?.classList;
+    if (!classList) return;
+
+    classList.remove(styles.shake);
+    window.requestAnimationFrame(() => {
+      classList.add(styles.shake);
+    });
+  }, []);
 
   useEffect(() => {
     if (count === 0) {
@@ -79,23 +92,28 @@ export default function Play() {
               </Flex>
             </section>
             <section className={styles.timerSection}>
-              <Timer width="100%" />
+              <Flex align="center" gap={4}>
+                <IconClock size={20} />
+                <Timer width="100%" />
+              </Flex>
             </section>
             <section className={styles.inputSection}>
-              <Flex align="center" gap={4} justify="center" w="100%">
-                {word.map((letter, index) => (
-                  <div
-                    className={
-                      index < currentIndex
-                        ? styles.typedInLetter
-                        : styles.willTypeInLetter
-                    }
-                    key={index}
-                  >
-                    {letter}
-                  </div>
-                ))}
-              </Flex>
+              <div className={styles.wordContainer} ref={wordContainerRef}>
+                <Flex align="center" gap={4} justify="center" w="100%">
+                  {word.map((letter, index) => (
+                    <div
+                      className={
+                        index < currentIndex
+                          ? styles.typedInLetter
+                          : styles.willTypeInLetter
+                      }
+                      key={index}
+                    >
+                      {letter}
+                    </div>
+                  ))}
+                </Flex>
+              </div>
             </section>
           </Flex>
         </Card>
