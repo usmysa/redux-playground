@@ -7,5 +7,9 @@ export const toPixel = (value: number | string | undefined) => {
     return `${value}px`;
   }
 
+  if (value === "") {
+    return "0px";
+  }
+
   return value.endsWith("px") || value.endsWith("%") ? value : `${value}px`;
 };
