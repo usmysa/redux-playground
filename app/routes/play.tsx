@@ -18,7 +18,6 @@ import {
 import type { MetaFunction } from "@remix-run/node";
 import { useLocation, useNavigate } from "@remix-run/react";
 import * as styles from "@/styles/page/play.css";
-import { IconClock } from "@tabler/icons-react";
 import { useCallback, useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
@@ -92,10 +91,7 @@ export default function Play() {
               </Flex>
             </section>
             <section className={styles.timerSection}>
-              <Flex align="center" gap={4}>
-                <IconClock size={20} />
-                <Timer width="100%" />
-              </Flex>
+              <Timer width="100%" />
             </section>
             <section className={styles.inputSection}>
               <div className={styles.wordContainer} ref={wordContainerRef}>
