@@ -1,36 +1,24 @@
-# Welcome to Remix + Vite!
+<p align="center">
+  <img width="430" alt="simple typing" src="https://github.com/usmysa/redux-playground/assets/11327832/12d1f909-d85f-4667-9130-64d3e6cbbc19">  
+</p>
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+# Simple Typing
+## Technology
+- Framework: [Remix](https://github.com/remix-run/remix)
+- Build Tool: [Vite](https://github.com/vitejs/vite)
+- JavaScript Runtime: [Bun](https://github.com/oven-sh/bun)
+- Styling: [vanilla-extract](https://github.com/vanilla-extract-css/vanilla-extract)
+- State Management: [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)
 
-## Development
-
-Run the Vite dev server:
-
-```shellscript
-npm run dev
-```
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
+## Quick Start
+### Install dependencies
 
 ```sh
-npm start
+bun install
 ```
 
-Now you'll need to pick a host to deploy it to.
+### Run locally
 
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+```sh
+bun run dev
+```
