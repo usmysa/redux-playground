@@ -112,7 +112,7 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Build
-        run: bun run
+        run: bun run build
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
