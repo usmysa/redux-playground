@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > renders correctly 1`] = `
+<div>
+  <div
+    class="styles_wrapper__1dl4v454"
+    style="--styleVars_padding__1dl4v451: var(--spacing-md__xzbfpk3); --styleVars_radius__1dl4v452: var(--spacing-md__xzbfpk3);"
+  >
+    <div>
+      Card
+    </div>
+  </div>
+</div>
+`;
