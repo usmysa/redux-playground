@@ -9,7 +9,7 @@ import {
 } from "@/components/";
 import { useDispatch } from "@/hooks";
 import * as styles from "@/styles/page/start.css";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 
 export const meta: MetaFunction = () => {
   return [

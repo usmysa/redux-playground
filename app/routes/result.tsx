@@ -8,7 +8,7 @@ import {
 } from "@/components/";
 import { useDispatch, useSelector } from "@/hooks";
 import * as styles from "@/styles/page/result.css";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 
 export const meta: MetaFunction = () => {
   return [
