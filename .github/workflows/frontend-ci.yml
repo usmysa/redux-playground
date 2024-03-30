@@ -27,3 +27,25 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
         run: bun install
+
+  typecheck:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Restore cached node_modules
+        uses: actions/cache@v4
+        id: node_modules_cache_id
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
+      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+      - name: Check Type
+        uses: bun typecheck
