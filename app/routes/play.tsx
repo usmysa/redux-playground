@@ -16,7 +16,7 @@ import {
   useTyping,
 } from "@/hooks";
 import * as styles from "@/styles/page/play.css";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 import { useLocation, useNavigate } from "@remix-run/react";
 import { useCallback, useEffect, useRef } from "react";
 
