@@ -1,7 +1,7 @@
 name: Frontend CI
-
 on:
   pull_request:
+    branches: [main]
     types:
       - opened
       - synchronize
@@ -112,7 +112,7 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - name: Build
-        run: bun run build
+        run: bun run
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
