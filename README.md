@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="430" alt="simple typing" src="https://github.com/usmysa/redux-playground/assets/11327832/12d1f909-d85f-4667-9130-64d3e6cbbc19">  
+  <img width="430" alt="simple typing" src="https://github.com/usmysa/redux-playground/assets/11327832/12d1f909-d85f-4667-9130-64d3e6cbbc19">
 </p>
 
 # Simple Typing
@@ -19,6 +19,8 @@
 - Testing
   - [Vitest](https://github.com/vitest-dev/vitest)
   - [React Testing Library](https://github.com/testing-library/react-testing-library)
+- Linter, Formatter
+  - [Biome](https://biomejs.dev/ja/)
 
 ## Quick Start
 
