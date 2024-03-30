@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-  typecheck:
+  type-check:
     needs: [setup]
     runs-on: ubuntu-latest
     steps:

@@ -27,3 +27,15 @@ jobs:
           projectName: simple-typing
           directory: ./build/client
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  remove-merged-branch:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Delete Branches
+        run: |
+          git branch -r --merged=main | grep -vE '^\s*origin/(main$|develop$|HEAD$)' | sed 's/origin\///' | xargs git push --delete origin
