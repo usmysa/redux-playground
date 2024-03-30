@@ -2,7 +2,7 @@ import { Flex } from "@/components";
 import { useSelector } from "@/hooks";
 import * as styles from "./styles.css";
 
-export function Error() {
+export function ErrorText() {
   const errors = useSelector((state) => state.errors.value);
 
   return (

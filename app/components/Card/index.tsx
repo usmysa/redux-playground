@@ -1,6 +1,6 @@
 import { useStyles } from "@/hooks";
 import { useTheme } from "@/providers/theme";
-import type { Spacing, Radius } from "@/theme.types";
+import type { Radius, Spacing } from "@/theme.types";
 import { toPixel } from "@/utils";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { styleVars, wrapper } from "./styles.css";

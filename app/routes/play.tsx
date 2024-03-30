@@ -1,12 +1,12 @@
 import {
   Card,
   Container,
-  Error,
+  ErrorText,
   Flex,
+  ScoreText,
+  Timer,
   incrementError,
   incrementScore,
-  Score,
-  Timer,
 } from "@/components/";
 import {
   useDispatch,
@@ -15,9 +15,9 @@ import {
   useSelector,
   useTyping,
 } from "@/hooks";
+import * as styles from "@/styles/page/play.css";
 import type { MetaFunction } from "@remix-run/node";
 import { useLocation, useNavigate } from "@remix-run/react";
-import * as styles from "@/styles/page/play.css";
 import { useCallback, useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
@@ -86,8 +86,8 @@ export default function Play() {
           <Flex direction="column" h="100%">
             <section className={styles.timerSection}>
               <Flex gap="xl" p="md">
-                <Score />
-                <Error />
+                <ScoreText />
+                <ErrorText />
               </Flex>
             </section>
             <section className={styles.timerSection}>
@@ -103,7 +103,8 @@ export default function Play() {
                           ? styles.typedInLetter
                           : styles.willTypeInLetter
                       }
-                      key={index}
+                      // biome-ignore lint: lint/suspicious/noArrayIndexKey
+                      key={`${letter}-${index}`}
                     >
                       {letter}
                     </div>

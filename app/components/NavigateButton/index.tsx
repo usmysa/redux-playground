@@ -14,5 +14,9 @@ export function NavigateButton({ label, to, onBeforeNavigate }: Props) {
     navigate(to, { state: { from: pathname } });
   };
 
-  return <button onClick={onClick}>{label}</button>;
+  return (
+    <button type="button" onClick={onClick}>
+      {label}
+    </button>
+  );
 }

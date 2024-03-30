@@ -15,7 +15,7 @@ type Params = {
 export function useTyping({ maxLength, minLength }: Params) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [word, setWord] = useState<string[]>(
-    generateWord(minLength, maxLength)
+    generateWord(minLength, maxLength),
   );
 
   const typing = useCallback(
@@ -38,7 +38,7 @@ export function useTyping({ maxLength, minLength }: Params) {
       setCurrentIndex(currentIndex + 1);
       onCorrect();
     },
-    [currentIndex, maxLength, minLength, word]
+    [currentIndex, maxLength, minLength, word],
   );
 
   return {

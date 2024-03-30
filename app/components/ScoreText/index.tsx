@@ -2,7 +2,7 @@ import { Flex } from "@/components";
 import { useSelector } from "@/hooks";
 import * as styles from "./styles.css";
 
-export function Score() {
+export function ScoreText() {
   const scores = useSelector((state) => state.scores.value);
 
   return (

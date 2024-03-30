@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/providers/theme";
-import { Provider } from "react-redux";
+import { store } from "@/store";
+import "@/styles/global/global.css";
 import {
   Links,
   Meta,
@@ -7,8 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import "@/styles/global/global.css";
-import { store } from "@/store";
+import { Provider } from "react-redux";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
