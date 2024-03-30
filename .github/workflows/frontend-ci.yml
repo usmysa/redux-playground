@@ -16,7 +16,8 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/cache@v4
+      - name: Save node_modules cache
+        uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
@@ -36,7 +37,8 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/cache@v4
+      - name: Restore cached node_modules
+        uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
@@ -44,8 +46,6 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: bun install
       - name: Check Type
         uses: bun typecheck
 
@@ -59,7 +59,8 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/cache@v4
+      - name: Restore cached node_modules
+        uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
@@ -67,8 +68,6 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
       - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: bun install
       - name: Run Lint
         run: bun run lint
 
@@ -82,16 +81,14 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/cache@v4
+      - name: Restore cached node_modules
+        uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
-      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: bun install
       - name: Run Test
         # run: bun test
         run: npm run test
@@ -106,18 +103,16 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - uses: actions/cache@v4
+      - name: Restore cached node_modules
+        uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/bun.lockb') }}
-      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: bun install
       - name: Build
-        run: npx @cloudflare/next-on-pages@1
+        run: bun run build
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
