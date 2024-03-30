@@ -23,7 +23,7 @@ const LEVEL_WORD_LENGTH: {
 export function useLevel() {
   const getWordLength = useCallback(
     (level: Level) => LEVEL_WORD_LENGTH[level],
-    []
+    [],
   );
 
   return {

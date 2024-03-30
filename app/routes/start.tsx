@@ -8,8 +8,8 @@ import {
   resetScore,
 } from "@/components/";
 import { useDispatch } from "@/hooks";
-import type { MetaFunction } from "@remix-run/node";
 import * as styles from "@/styles/page/start.css";
+import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [

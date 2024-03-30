@@ -1,5 +1,5 @@
-import type { Theme } from "@/theme.types";
 import { vars } from "@/styles/global/theme.css";
+import type { Theme } from "@/theme.types";
 import { createContext, useContext } from "react";
 
 const ThemeContext = createContext<Theme>(vars);

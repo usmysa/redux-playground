@@ -7,12 +7,12 @@ export function useStyles(theme: Theme) {
 
   const getSpacing = useCallback(
     (value: Spacing) => getSize(value, spacing),
-    [spacing]
+    [spacing],
   );
 
   const getRadius = useCallback(
     (value: Radius) => getSize(value, radius),
-    [radius]
+    [radius],
   );
 
   return {
@@ -23,7 +23,7 @@ export function useStyles(theme: Theme) {
 
 const getSize = (
   value: Size | number | string,
-  sizeObj: Record<Size, string>
+  sizeObj: Record<Size, string>,
 ) => {
   if (typeof value === "number") {
     return toPixel(value);
