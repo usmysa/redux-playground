@@ -33,6 +33,7 @@
     "@biomejs/biome": "1.6.3",
     "@cloudflare/workers-types": "^4.20230518.0",
     "@happy-dom/global-registrator": "^14.3.9",
+    "@playwright/test": "^1.42.1",
     "@remix-run/dev": "^2.8.1",
     "@testing-library/react": "^14.2.2",
     "@types/react": "^18.2.20",
