@@ -4,6 +4,10 @@
 
 # Simple Typing
 
+## Demo
+
+https://simple-typing.pages.dev/start
+
 ## Technology
 
 - Framework
@@ -21,6 +25,8 @@
   - [React Testing Library](https://github.com/testing-library/react-testing-library)
 - Linter, Formatter
   - [Biome](https://biomejs.dev/ja/)
+- Hosting
+  - [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## Quick Start
 
