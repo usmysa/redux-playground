@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ScoreText > renders correctly 1`] = `
+<div>
+  <div
+    class="styles_wrapper__1xqviej9"
+    style="--styleVars_alignItems__1xqviej0: center; --styleVars_flexDirection__1xqviej1: column; --styleVars_gap__1xqviej2: 0px; --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px; --styleVars_width__1xqviej8: 80px;"
+  >
+    <div
+      class="styles_label__1eyb7x90"
+    >
+      Scores
+    </div>
+    <div
+      class="styles_value__1eyb7x91"
+    >
+      0
+    </div>
+  </div>
+</div>
+`;

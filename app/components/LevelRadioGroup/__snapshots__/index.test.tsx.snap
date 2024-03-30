@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LevelRadioGroup > renders correctly 1`] = `
+<div>
+  <form>
+    <div
+      class="styles_wrapper__1xqviej9"
+      style="--styleVars_alignItems__1xqviej0: normal; --styleVars_flexDirection__1xqviej1: column; --styleVars_gap__1xqviej2: var(--spacing-xs__xzbfpk1); --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px;"
+    >
+      <div
+        class="styles_wrapper__1xqviej9"
+        style="--styleVars_alignItems__1xqviej0: normal; --styleVars_flexDirection__1xqviej1: row; --styleVars_gap__1xqviej2: var(--spacing-xs__xzbfpk1); --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px;"
+      >
+        <input
+          aria-label="Easy"
+          class="styles_radio__tp90la1"
+          id="level-Easy"
+          name="level"
+          type="radio"
+          value="Easy"
+        />
+        <label
+          class="styles_labelStyle__tp90la0"
+          for="level-Easy"
+        >
+          Easy
+        </label>
+      </div>
+      <div
+        class="styles_wrapper__1xqviej9"
+        style="--styleVars_alignItems__1xqviej0: normal; --styleVars_flexDirection__1xqviej1: row; --styleVars_gap__1xqviej2: var(--spacing-xs__xzbfpk1); --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px;"
+      >
+        <input
+          aria-label="Normal"
+          class="styles_radio__tp90la1"
+          id="level-Normal"
+          name="level"
+          type="radio"
+          value="Normal"
+        />
+        <label
+          class="styles_labelStyle__tp90la0"
+          for="level-Normal"
+        >
+          Normal
+        </label>
+      </div>
+      <div
+        class="styles_wrapper__1xqviej9"
+        style="--styleVars_alignItems__1xqviej0: normal; --styleVars_flexDirection__1xqviej1: row; --styleVars_gap__1xqviej2: var(--spacing-xs__xzbfpk1); --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px;"
+      >
+        <input
+          aria-label="Hard"
+          class="styles_radio__tp90la1"
+          id="level-Hard"
+          name="level"
+          type="radio"
+          value="Hard"
+        />
+        <label
+          class="styles_labelStyle__tp90la0"
+          for="level-Hard"
+        >
+          Hard
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+`;

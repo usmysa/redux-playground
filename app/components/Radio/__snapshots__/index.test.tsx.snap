@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Radio /> > renders correctly 1`] = `
+<div>
+  <div
+    class="styles_wrapper__1xqviej9"
+    style="--styleVars_alignItems__1xqviej0: normal; --styleVars_flexDirection__1xqviej1: row; --styleVars_gap__1xqviej2: var(--spacing-xs__xzbfpk1); --styleVars_justifyContent__1xqviej4: flex-start; --styleVars_marginTop__1xqviej5: 0px; --styleVars_padding__1xqviej6: 0px;"
+  >
+    <input
+      aria-label="label"
+      class="styles_radio__tp90la1"
+      id="name-label"
+      name="name"
+      type="radio"
+    />
+    <label
+      class="styles_labelStyle__tp90la0"
+      for="name-label"
+    >
+      label
+    </label>
+  </div>
+</div>
+`;
