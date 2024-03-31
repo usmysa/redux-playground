@@ -9,6 +9,8 @@ import {
 import { useDispatch, useSelector } from "@/hooks";
 import * as styles from "@/styles/page/result.css";
 import type { MetaFunction } from "@remix-run/cloudflare";
+import { useNavigate } from "@remix-run/react";
+import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +20,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Result() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const timer = useSelector((state) => state.timer.count);
   const errors = useSelector((state) => state.errors.value);
   const level = useSelector((state) => state.level.value);
   const scores = useSelector((state) => state.scores.value);
@@ -28,6 +32,12 @@ export default function Result() {
     dispatch(resetError());
     dispatch(resetScore());
   };
+
+  useEffect(() => {
+    if (timer !== 0) {
+      navigate("/start");
+    }
+  }, [navigate, timer]);
 
   return (
     <Container>

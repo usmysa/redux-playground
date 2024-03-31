@@ -9,12 +9,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     remixCloudflareDevProxy(),
-    remix(),
+    remix({ ssr: false }),
     tsconfigPaths(),
     vanillaExtractPlugin(),
   ],
   test: {
     environment: "happy-dom",
+    exclude: ["node_modules/**", "tests/**"],
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
   },
