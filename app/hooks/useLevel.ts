@@ -1,4 +1,4 @@
-import type { Level } from "@/components";
+import type { Level } from "@/components/LevelRadio/levelSlice";
 import { useCallback } from "react";
 
 type WordLengthRange = {
