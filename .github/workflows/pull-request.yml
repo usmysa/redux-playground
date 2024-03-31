@@ -94,7 +94,7 @@ jobs:
         run: npm run test
 
   e2e-test:
-    needs: [setup]
+    needs: [unit-test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
