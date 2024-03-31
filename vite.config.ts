@@ -14,6 +14,7 @@ export default defineConfig({
     vanillaExtractPlugin(),
   ],
   test: {
+    exclude: ["node_modules/**", "tests/**"],
     environment: "happy-dom",
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
