@@ -10,6 +10,7 @@
     "lint": "bunx @biomejs/biome lint ./app",
     "start": "remix-serve ./build/server/index.js",
     "test": "vitest",
+    "test:update": "vitest -u",
     "coverage": "vitest run --coverage",
     "typecheck": "tsc"
   },

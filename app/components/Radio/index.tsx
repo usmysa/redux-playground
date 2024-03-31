@@ -10,7 +10,14 @@ export function Radio({ label, name, ...props }: Props) {
 
   return (
     <Flex gap="xs">
-      <input className={radio} id={id} name={name} type="radio" {...props} />
+      <input
+        aria-label={label}
+        className={radio}
+        id={id}
+        name={name}
+        type="radio"
+        {...props}
+      />
       <label className={labelStyle} htmlFor={id}>
         {label}
       </label>

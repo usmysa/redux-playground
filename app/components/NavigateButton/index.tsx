@@ -15,7 +15,7 @@ export function NavigateButton({ label, to, onBeforeNavigate }: Props) {
   };
 
   return (
-    <button type="button" onClick={onClick}>
+    <button aria-label={label} onClick={onClick} type="button">
       {label}
     </button>
   );

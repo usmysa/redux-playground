@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Timer > renders correctly 1`] = `
+<div>
+  <progress
+    class="styles_timer__7z3f421"
+    max="30"
+    style="--styleVars_width__7z3f420: 100px;"
+    value="30"
+  />
+</div>
+`;
