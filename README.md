@@ -20,9 +20,11 @@ https://simple-typing.pages.dev/start
   - [vanilla-extract](https://github.com/vanilla-extract-css/vanilla-extract)
 - State Management
   - [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)
-- Testing
+- Unit Testing
   - [Vitest](https://github.com/vitest-dev/vitest)
   - [React Testing Library](https://github.com/testing-library/react-testing-library)
+- E2E Testing
+  - [Playwright](https://playwright.dev/)
 - Linter, Formatter
   - [Biome](https://biomejs.dev/ja/)
 - Hosting
