@@ -8,7 +8,7 @@ export const labelStyle = style({
   },
 });
 
-export const radio = style({
+export const radioStyle = style({
   accentColor: "black",
   margin: 0,
   ":hover": {

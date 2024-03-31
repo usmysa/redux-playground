@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LinkButton > renders correctly 1`] = `
+<div>
+  <a
+    href="/test"
+  >
+    <button
+      aria-label="Label"
+      type="button"
+    >
+      Label
+    </button>
+  </a>
+</div>
+`;

@@ -1,5 +1,5 @@
-import { Flex } from "@/components";
-import { labelStyle, radio } from "./styles.css";
+import { Flex } from "@/components/Flex";
+import { labelStyle, radioStyle } from "./styles.css";
 
 type Props = {
   label: string;
@@ -12,7 +12,7 @@ export function Radio({ label, name, ...props }: Props) {
     <Flex gap="xs">
       <input
         aria-label={label}
-        className={radio}
+        className={radioStyle}
         id={id}
         name={name}
         type="radio"

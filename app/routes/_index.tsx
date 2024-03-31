@@ -1,11 +1,5 @@
-import { useNavigate } from "@remix-run/react";
-import { useEffect } from "react";
+import { redirect } from "@remix-run/cloudflare";
 
-export default function Page() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("/start");
-  }, [navigate]);
-
-  return null;
+export function loader() {
+  return redirect("/start");
 }

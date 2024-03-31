@@ -1,6 +1,8 @@
-import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-export type Level = "Easy" | "Normal" | "Hard";
+export const LEVELS = ["Easy", "Normal", "Hard"] as const;
+
+export type Level = (typeof LEVELS)[number];
 
 export type LevelState = {
   value: Level;

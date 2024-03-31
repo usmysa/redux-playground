@@ -1,12 +1,5 @@
-import {
-  Container,
-  Flex,
-  NavigateButton,
-  resetCount,
-  resetError,
-  resetScore,
-} from "@/components/";
-import { useDispatch, useSelector } from "@/hooks";
+import { Container, Flex, LinkButton } from "@/components/";
+import { useSelector } from "@/hooks";
 import * as styles from "@/styles/page/result.css";
 import type { MetaFunction } from "@remix-run/cloudflare";
 import { useNavigate } from "@remix-run/react";
@@ -21,23 +14,17 @@ export const meta: MetaFunction = () => {
 
 export default function Result() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const timer = useSelector((state) => state.timer.count);
   const errors = useSelector((state) => state.errors.value);
   const level = useSelector((state) => state.level.value);
   const scores = useSelector((state) => state.scores.value);
-
-  const onRestart = () => {
-    dispatch(resetCount());
-    dispatch(resetError());
-    dispatch(resetScore());
-  };
+  const isNotFinished = timer !== 0;
 
   useEffect(() => {
-    if (timer !== 0) {
+    if (isNotFinished) {
       navigate("/start");
     }
-  }, [navigate, timer]);
+  }, [isNotFinished, navigate]);
 
   return (
     <Container>
@@ -58,12 +45,8 @@ export default function Result() {
           </Flex>
         </Flex>
         <Flex gap="md">
-          <NavigateButton label="Back Top" to="/start" />
-          <NavigateButton
-            label="Restart"
-            onBeforeNavigate={onRestart}
-            to="/play"
-          />
+          <LinkButton label="Back Top" to="/start" />
+          <LinkButton label="Restart" to="/play" />
         </Flex>
       </Flex>
     </Container>
