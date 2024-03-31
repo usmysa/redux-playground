@@ -9,7 +9,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     remixCloudflareDevProxy(),
-    remix(),
+    remix({ ssr: false }),
     tsconfigPaths(),
     vanillaExtractPlugin(),
   ],
