@@ -5,9 +5,9 @@ import {
   Flex,
   ScoreText,
   Timer,
-  incrementError,
-  incrementScore,
 } from "@/components/";
+import { incrementError } from "@/components/ErrorText/errorSlice";
+import { incrementScore } from "@/components/ScoreText/scoreSlice";
 import {
   useDispatch,
   useKeyDown,
@@ -17,7 +17,7 @@ import {
 } from "@/hooks";
 import * as styles from "@/styles/page/play.css";
 import type { MetaFunction } from "@remix-run/cloudflare";
-import { useLocation, useNavigate } from "@remix-run/react";
+import { useBeforeUnload, useNavigate } from "@remix-run/react";
 import { useCallback, useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
@@ -31,11 +31,17 @@ export default function Play() {
   const dispatch = useDispatch();
   const { getWordLength } = useLevel();
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const isAccessDirectly = !state?.from;
+  useBeforeUnload((event) => {
+    event.preventDefault();
+    event.returnValue = "";
+  });
   const firstRender = useRef(true);
   const level = useSelector((state) => state.level.value);
-  const count = useSelector((state) => state.timer.count);
+  const errors = useSelector((state) => state.errors.value);
+  const scores = useSelector((state) => state.scores.value);
+  const { count, max: maxCount } = useSelector((state) => state.timer);
+  const isPlaying = (0 < count && count < maxCount) || errors > 0 || scores > 0;
+  const isFinished = count === 0;
   const wordContainerRef = useRef<HTMLDivElement>(null);
   const { currentIndex, typing, word } = useTyping(getWordLength(level));
   useKeyDown((event) => {
@@ -62,22 +68,16 @@ export default function Play() {
   }, []);
 
   useEffect(() => {
-    if (count === 0) {
-      navigate(firstRender.current ? "/start" : "/result");
-      return;
-    }
-    firstRender.current = false;
-  }, [count, navigate]);
-
-  useEffect(() => {
-    if (isAccessDirectly) {
+    if (firstRender.current && isPlaying) {
       navigate("/start");
     }
-  }, [isAccessDirectly, navigate]);
 
-  if (isAccessDirectly) {
-    return null;
-  }
+    if (isFinished) {
+      navigate("/result");
+    }
+
+    firstRender.current = false;
+  }, [isFinished, isPlaying, navigate]);
 
   return (
     <Container>

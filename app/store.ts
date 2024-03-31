@@ -1,5 +1,8 @@
-import { errorSlice, levelSlice, scoreSlice, timerSlice } from "@/components";
 import { configureStore } from "@reduxjs/toolkit";
+import { errorSlice } from "./components/ErrorText/errorSlice";
+import { levelSlice } from "./components/LevelRadio/levelSlice";
+import { scoreSlice } from "./components/ScoreText/scoreSlice";
+import { timerSlice } from "./components/Timer/timerSlice";
 
 export const store = configureStore({
   reducer: {

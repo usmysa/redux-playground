@@ -1,4 +1,4 @@
-import { Flex } from "@/components";
+import { Flex } from "@/components/Flex";
 import { useSelector } from "@/hooks";
 import * as styles from "./styles.css";
 

@@ -1,15 +1,13 @@
-import {
-  Container,
-  Flex,
-  LevelRadioGroup,
-  NavigateButton,
-  resetCount,
-  resetError,
-  resetScore,
-} from "@/components/";
+import { Container, Flex, LevelRadio } from "@/components";
+import { resetError } from "@/components/ErrorText/errorSlice";
+import { LEVELS } from "@/components/LevelRadio/levelSlice";
+import { resetScore } from "@/components/ScoreText/scoreSlice";
+import { resetCount } from "@/components/Timer/timerSlice";
 import { useDispatch } from "@/hooks";
 import * as styles from "@/styles/page/start.css";
-import type { MetaFunction } from "@remix-run/cloudflare";
+import { redirect, type MetaFunction } from "@remix-run/cloudflare";
+import { Form } from "@remix-run/react";
+import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,21 +16,32 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function action() {
+  return redirect("/play");
+}
+
 export default function Start() {
   const dispatch = useDispatch();
-  const onRestart = () => {
+
+  useEffect(() => {
     dispatch(resetCount());
     dispatch(resetError());
     dispatch(resetScore());
-  };
+  }, [dispatch]);
 
   return (
     <Container>
-      <Flex align="center" direction="column" gap="xl">
-        <h1 className={styles.title}>Simple Typing</h1>
-        <LevelRadioGroup />
-        <NavigateButton label="Start" onBeforeNavigate={onRestart} to="/play" />
-      </Flex>
+      <Form method="POST">
+        <Flex align="center" direction="column" gap="xl">
+          <h1 className={styles.title}>Simple Typing</h1>
+          <Flex direction="column" gap="xs">
+            {LEVELS.map((level) => (
+              <LevelRadio key={level} value={level} />
+            ))}
+          </Flex>
+          <button type="submit">Start</button>
+        </Flex>
+      </Form>
     </Container>
   );
 }
